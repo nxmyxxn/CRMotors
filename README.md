@@ -1,3 +1,37 @@
+# CRMotors – Salesforce DX Project
+
+## Project Overview
+
+Traditional automotive sales and service systems often face challenges such as fragmented customer data and disconnected processes. This project delivers a unified Salesforce solution that streamlines the entire customer journey — from lead and test drive to quotation, contract, delivery, and after-sales service including support and maintenance.
+
+By leveraging Salesforce’s standard architecture with thoughtful customizations, the system ensures consistency, visibility, and a seamless experience across all touchpoints.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Salesforce DX Project: Next Steps
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
