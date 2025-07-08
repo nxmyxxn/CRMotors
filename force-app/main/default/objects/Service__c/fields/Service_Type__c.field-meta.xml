@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Type__c</fullName>
+    <description>서비스 유형</description>
+    <label>Service Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>정기점검</fullName>
+                <default>false</default>
+                <label>정기점검</label>
+            </value>
+            <value>
+                <fullName>긴급정비</fullName>
+                <default>false</default>
+                <label>긴급정비</label>
+            </value>
+            <value>
+                <fullName>일반정비</fullName>
+                <default>false</default>
+                <label>일반정비</label>
+            </value>
+            <value>
+                <fullName>보증수리</fullName>
+                <default>false</default>
+                <label>보증수리</label>
+            </value>
+            <value>
+                <fullName>기타</fullName>
+                <default>false</default>
+                <label>기타</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

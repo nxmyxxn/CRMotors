@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Test_Drive_Vehicle__c</fullName>
+    <label>시승 차량</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>모닝</fullName>
+                <default>false</default>
+                <label>모닝</label>
+            </value>
+            <value>
+                <fullName>레이</fullName>
+                <default>false</default>
+                <label>레이</label>
+            </value>
+            <value>
+                <fullName>K5</fullName>
+                <default>false</default>
+                <label>K5</label>
+            </value>
+            <value>
+                <fullName>K8</fullName>
+                <default>false</default>
+                <label>K8</label>
+            </value>
+            <value>
+                <fullName>K9</fullName>
+                <default>false</default>
+                <label>K9</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

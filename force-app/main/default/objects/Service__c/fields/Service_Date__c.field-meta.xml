@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Date__c</fullName>
+    <description>차량의 정비가 실제로 수행된 날짜</description>
+    <inlineHelpText>차량이 정비를 받은 실제 날짜를 선택해 주세요.</inlineHelpText>
+    <label>Service Date</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

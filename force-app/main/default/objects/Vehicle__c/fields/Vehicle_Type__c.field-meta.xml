@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle_Type__c</fullName>
+    <label>Vehicle Type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EV</fullName>
+                <default>false</default>
+                <label>EV</label>
+            </value>
+            <value>
+                <fullName>PBV</fullName>
+                <default>false</default>
+                <label>PBV</label>
+            </value>
+            <value>
+                <fullName>승용</fullName>
+                <default>false</default>
+                <label>승용</label>
+            </value>
+            <value>
+                <fullName>RV</fullName>
+                <default>false</default>
+                <label>RV</label>
+            </value>
+            <value>
+                <fullName>택시 &amp; 버스</fullName>
+                <default>false</default>
+                <label>택시 &amp; 버스</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

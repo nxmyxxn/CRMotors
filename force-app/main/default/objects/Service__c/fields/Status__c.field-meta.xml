@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>고객 차량의 정비 프로세스 상태</description>
+    <inlineHelpText>현재 정비 진행 상태를 선택해 주세요.
+
+접수 완료: 고객 차량이 접수됨
+점검 중: 차량 상태 점검 중
+정비 중: 정비 작업 진행 중
+정비 완료: 모든 작업 종료, 인도 준비 완료</inlineHelpText>
+    <label>Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>접수 완료</fullName>
+                <default>false</default>
+                <label>접수 완료</label>
+            </value>
+            <value>
+                <fullName>점검 중</fullName>
+                <default>false</default>
+                <label>점검 중</label>
+            </value>
+            <value>
+                <fullName>정비 중</fullName>
+                <default>false</default>
+                <label>정비 중</label>
+            </value>
+            <value>
+                <fullName>정비 완료</fullName>
+                <default>false</default>
+                <label>정비 완료</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

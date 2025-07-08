@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vehicle__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>정비가 수행되는 고객 차량을 지정</description>
+    <inlineHelpText>정비를 진행한 차량을 선택하세요.</inlineHelpText>
+    <label>Vehicle</label>
+    <referenceTo>Asset</referenceTo>
+    <relationshipLabel>Siervices</relationshipLabel>
+    <relationshipName>Siervices</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

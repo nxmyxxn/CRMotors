@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Repair_Shop__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>이 서비스를 수행한 정비소</description>
+    <inlineHelpText>서비스가 수행된 정비소를 선택하세요.</inlineHelpText>
+    <label>Repair Shop</label>
+    <referenceTo>Repair_Shop__c</referenceTo>
+    <relationshipLabel>Siervices</relationshipLabel>
+    <relationshipName>Siervices</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
