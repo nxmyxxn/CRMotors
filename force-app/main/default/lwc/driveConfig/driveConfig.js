@@ -35,22 +35,17 @@ export default class DriveConfig extends NavigationMixin(LightningElement) {
     
 
         switch (this.carName) {
-            case 'rayev': this.carImage = rayevImg; break;
+            case 'rayev': this.carImage = blue; break;
             case 'niroev': this.carImage = niroevImg; break;
             case 'ev3': this.carImage = ev3Img; break;
             case 'ev4': this.carImage = ev4Img; break;
             default: this.carImage = ''; break;
         }
-
     }
-
-    
 
 
     get trimOptions() {
         return [
-            { label: '라이트', value: 'light' },
-            { label: '에어', value: 'air' },
             { label: '라이트', value: '라이트' },
             { label: '에어', value: '에어' }
         ];
@@ -87,10 +82,10 @@ export default class DriveConfig extends NavigationMixin(LightningElement) {
     handleColorChange(event) {
         this.selectedColor = event.detail.value;
         switch (this.selectedColor) {
-            case 'blue': this.carImage = blue; break;
-            case 'black': this.carImage = black; break;
-            case 'acuamint': this.carImage = acuamint; break;
-            case 'beige': this.carImage = beige; break;
+            case '스모크블루': this.carImage = blue; break;
+            case '오로라블랙펄': this.carImage = black; break;
+            case '아쿠아민트': this.carImage = acuamint; break;
+            case '밀키베이지': this.carImage = beige; break;
         }
     }
     //alert('carImage: ' + this.carImage);
@@ -108,16 +103,18 @@ export default class DriveConfig extends NavigationMixin(LightningElement) {
                 message: '견적이 저장되었습니다.',
                 variant: 'success'
             }));
+
+            window.location.href = '/test/quotesummary';
     
             // 저장된 레코드 보기 (선택 사항)
-            this[NavigationMixin.Navigate]({
-                type: 'standard__recordPage',
-                attributes: {
-                    recordId: result,
-                    objectApiName: 'CarConfig_Quote__c',
-                    actionName: 'view'
-                }
-            });
+            // this[NavigationMixin.Navigate]({
+            //     type: 'standard__recordPage',
+            //     attributes: {
+            //         recordId: result,
+            //         objectApiName: 'CarConfig_Quote__c',
+            //         actionName: 'view'
+            //     }
+            // });
     
         }).catch(error => {
             this.dispatchEvent(new ShowToastEvent({

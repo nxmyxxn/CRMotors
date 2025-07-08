@@ -1,0 +1,76 @@
+<template>
+    <!-- 전체를 감싸는 컨테이너 -->
+    <div class="container slds-p-around_large">
+        <div class="slds-text-align_center slds-m-bottom_large">
+            <lightning-icon icon-name="utility:check" size="large" variant="success"></lightning-icon>
+            <h1 class="slds-text-heading_large slds-m-top_medium">고객님의 레이 견적이 완성되었습니다.</h1>
+        </div>
+
+        <!-- 메인 콘텐츠 영역 (왼쪽: 가격 정보, 오른쪽: 차량 요약) -->
+        <lightning-layout multiple-rows="true">
+            <!-- 왼쪽 가격 정보 컬럼 -->
+            <lightning-layout-item size="12" medium-size="7" padding="around-medium">
+                
+                <!-- 아코디언 컴포넌트로 펼치기/접기 기능 구현 -->
+                <lightning-accordion allow-multiple-sections-open active-section-name={activeSections}>
+                    
+                    <!-- 차량 가격 섹션 -->
+                    <lightning-accordion-section name="vehiclePrice" label="차량 가격">
+                        <div slot="actions">
+                            <span class="slds-text-heading_small slds-p-right_medium">20,580,000 원</span>
+                        </div>
+                        <!-- 펼쳤을 때 보이는 내용 -->
+                        <div class="slds-p-horizontal_medium">
+                            <div class="slds-grid slds-m-bottom_small">
+                                <div class="slds-col">레이 - 트림 변경</div>
+                                <div class="slds-col slds-text-align_right">19,280,000 원</div>
+                            </div>
+                            <div class="slds-grid slds-m-bottom_small">
+                                <div class="slds-col">컬러</div>
+                                <div class="slds-col slds-text-align_right">0 원</div>
+                            </div>
+                            <div class="slds-grid">
+                                <div class="slds-col">선택 옵션</div>
+                                <div class="slds-col slds-text-align_right">1,300,000 원</div>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+                    
+                    <!-- 탁송 섹션 -->
+                    <lightning-accordion-section name="shipping" label="탁송">
+                        <div slot="actions">
+                            <span class="slds-text-heading_small slds-p-right_medium">175,000 원</span>
+                        </div>
+                         <!-- 펼쳤을 때 보이는 내용 (필요시 추가) -->
+                    </lightning-accordion-section>
+
+                    <!-- 구매 혜택 섹션 -->
+                    <lightning-accordion-section name="benefits" label="구매 혜택">
+                         <div slot="actions">
+                            <span class="slds-text-heading_small slds-p-right_medium">0 원</span>
+                        </div>
+                    </lightning-accordion-section>
+
+                </lightning-accordion>
+
+                <!-- 결제 금액 -->
+                <div class="slds-grid slds-p-vertical_medium total-line">
+                    <div class="slds-col"><span class="slds-text-heading_medium">결제 금액</span></div>
+                    <div class="slds-col slds-text-align_right"><span class="slds-text-heading_medium">20,756,900 원</span></div>
+                </div>
+
+            </lightning-layout-item>
+
+            <!-- 오른쪽 차량 요약 컬럼 -->
+            <lightning-layout-item size="12" medium-size="5" padding="around-medium">
+                <div class="summary-card">
+                    <img src={carImageUrl} alt="Kia Ray" class="car-image"/>
+                    <h3 class="slds-text-heading_medium slds-m-top_medium">레이</h3>
+                    <p class="slds-text-color_weak">1.0 가솔린 그래비티</p>
+                    <lightning-button variant="brand" label="견적 저장" class="slds-m-top_medium slds-size_1-of-1"></lightning-button>
+                </div>
+            </lightning-layout-item>
+
+        </lightning-layout>
+    </div>
+</template>
