@@ -1,6 +1,10 @@
 import { LightningElement, wire } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import saveVehicleConfig from '@salesforce/apex/DriveConfigController.saveVehicleConfig';
+import { NavigationMixin } from 'lightning/navigation';
+
 import blue from '@salesforce/resourceUrl/ray_ev_blue';
 import black from '@salesforce/resourceUrl/ray_ev_black';
 import acuamint from '@salesforce/resourceUrl/ray_ev_acuamint';
@@ -11,7 +15,7 @@ import niroevImg from '@salesforce/resourceUrl/car_niroev';
 import ev3Img from '@salesforce/resourceUrl/car_ev3';
 import ev4Img from '@salesforce/resourceUrl/car_ev4';
 
-export default class DriveConfig extends LightningElement {
+export default class DriveConfig extends NavigationMixin(LightningElement) {
     carName = '';
     carImage = '';
     selectedTrim = '';
@@ -46,26 +50,28 @@ export default class DriveConfig extends LightningElement {
     get trimOptions() {
         return [
             { label: '라이트', value: 'light' },
-            { label: '에어', value: 'air' }
+            { label: '에어', value: 'air' },
+            { label: '라이트', value: '라이트' },
+            { label: '에어', value: '에어' }
         ];
     }
 
     get optionChoices() {
         return [
-            { label: '컴포트1', value: 'comfort1' },
-            { label: '컴포트2', value: 'comfort2' },
-            { label: '드라이브 와이즈2', value: 'drivewise2' },
-            { label: '하이패스 자동결제 시스템', value: 'highpass' },
-            { label: '스타일', value: 'style' },
+            { label: '컴포트1', value: '컴포트1' },
+            { label: '컴포트2', value: '컴포트2' },
+            { label: '드라이브 와이즈2', value: '드라이브 와이즈2' },
+            { label: '하이패스 자동결제 시스템', value: '하이패스 자동결제 시스템' },
+            { label: '스타일', value: '스타일' },
         ];
     }
 
     get colorChoices() {
         return [
-            { label: '스모크블루', value: 'blue' },
-            { label: '오로라블랙펄', value: 'black' },
-            { label: '아쿠아민트', value: 'acuamint' },
-            { label: '밀키베이지', value: 'beige' },
+            { label: '스모크블루', value: '스모크블루' },
+            { label: '오로라블랙펄', value: '오로라블랙펄' },
+            { label: '아쿠아민트', value: '아쿠아민트' },
+            { label: '밀키베이지', value: '밀키베이지' },
             
         ];
     }
@@ -91,6 +97,34 @@ export default class DriveConfig extends LightningElement {
 
     // 견적완료 버튼 클릭 시 리다이렉트
     handleCompleteEstimate() {
-        window.location.href = 'https://www.naver.com'; 
+        saveVehicleConfig({
+            carName: this.carName,
+            trimValue: this.selectedTrim,
+            colorValue: this.selectedColor,
+            optionValues: this.selectedOptions
+        }).then(result => {
+            this.dispatchEvent(new ShowToastEvent({
+                title: '성공',
+                message: '견적이 저장되었습니다.',
+                variant: 'success'
+            }));
+    
+            // 저장된 레코드 보기 (선택 사항)
+            this[NavigationMixin.Navigate]({
+                type: 'standard__recordPage',
+                attributes: {
+                    recordId: result,
+                    objectApiName: 'CarConfig_Quote__c',
+                    actionName: 'view'
+                }
+            });
+    
+        }).catch(error => {
+            this.dispatchEvent(new ShowToastEvent({
+                title: '오류 발생',
+                message: error.body.message,
+                variant: 'error'
+            }));
+        });
     }
 }
