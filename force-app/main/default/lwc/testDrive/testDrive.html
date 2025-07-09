@@ -1,0 +1,325 @@
+<template>
+    <div class="container slds-p-around_large">
+        <!-- 헤더 -->
+        <div class="slds-text-align_center slds-m-bottom_large">
+            <h1 class="slds-text-heading_large">시승 신청</h1>
+            <p class="slds-text-body_regular slds-m-top_small">단계별로 정보를 입력해주세요</p>
+        </div>
+
+        <!-- 진행 단계 표시 -->
+        <div class="slds-grid slds-m-bottom_large">
+            <div class="slds-col slds-size_1-of-6">
+                <div class="step-indicator {step1Class}">
+                    <div class="step-number">1</div>
+                    <div class="step-label">개인정보</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="step-indicator {step2Class}">
+                    <div class="step-number">2</div>
+                    <div class="step-label">모델 선택</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="step-indicator {step3Class}">
+                    <div class="step-number">3</div>
+                    <div class="step-label">시승 거점</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="step-indicator {step4Class}">
+                    <div class="step-number">4</div>
+                    <div class="step-label">시승 방법</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="step-indicator {step5Class}">
+                    <div class="step-number">5</div>
+                    <div class="step-label">시승 일정</div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-6">
+                <div class="step-indicator {step6Class}">
+                    <div class="step-number">6</div>
+                    <div class="step-label">이용 동의</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 단계별 콘텐츠 -->
+        <div class="content-area">
+            <!-- Step 1: 개인정보 확인 -->
+            <template if:true={showStep1}>
+                <lightning-card title="Step 1: 개인정보 확인" class="step-card">
+                    <div slot="actions">
+                        <lightning-button label="다음" variant="brand" onclick={handleNextStep1}></lightning-button>
+                    </div>
+                    <div class="slds-p-around_medium">
+                        <div class="slds-text-heading_medium slds-m-bottom_medium">고객님의 정보를 확인해주세요</div>
+                        
+                        <div class="user-info-section">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <div class="info-item">
+                                        <label class="info-label">이름</label>
+                                        <div class="info-value">{userName}</div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <div class="info-item">
+                                        <label class="info-label">전화번호</label>
+                                        <div class="info-value">{userPhone}</div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <div class="info-item">
+                                        <label class="info-label">이메일</label>
+                                        <div class="info-value">{userEmail}</div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <div class="info-item">
+                                        <label class="info-label">회원 등급</label>
+                                        <div class="info-value">{userGrade}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <!-- Step 2: 모델 선택 -->
+            <template if:true={showStep2}>
+                <lightning-card title="Step 2: 모델 선택" class="step-card">
+                    <div slot="actions">
+                        <lightning-button label="이전" variant="neutral" onclick={handlePreviousStep2} class="slds-m-right_small"></lightning-button>
+                        <template if:true={selectedCar}>
+                            <lightning-button label="다음" variant="brand" onclick={handleNextStep2}></lightning-button>
+                        </template>
+                    </div>
+                    <div class="slds-p-around_medium">
+                        <div class="slds-text-heading_medium slds-m-bottom_medium">시승하고 싶은 차량을 선택해주세요</div>
+                        
+                        <div class="car-selection-grid">
+                            <div class="car-option {rayevClass}" onclick={handleCarSelect} data-car="rayev">
+                                <img src={rayevImage} alt="Ray EV" class="car-image"/>
+                                <div class="car-info">
+                                    <h3>Ray EV</h3>
+                                    <p>전기차</p>
+                                </div>
+                            </div>
+                            <div class="car-option {niroevClass}" onclick={handleCarSelect} data-car="niroev">
+                                <img src={niroevImage} alt="Niro EV" class="car-image"/>
+                                <div class="car-info">
+                                    <h3>Niro EV</h3>
+                                    <p>전기차</p>
+                                </div>
+                            </div>
+                            <div class="car-option {ev3Class}" onclick={handleCarSelect} data-car="ev3">
+                                <img src={ev3Image} alt="EV3" class="car-image"/>
+                                <div class="car-info">
+                                    <h3>EV3</h3>
+                                    <p>전기차</p>
+                                </div>
+                            </div>
+                            <div class="car-option {ev4Class}" onclick={handleCarSelect} data-car="ev4">
+                                <img src={ev4Image} alt="EV4" class="car-image"/>
+                                <div class="car-info">
+                                    <h3>EV4</h3>
+                                    <p>전기차</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <!-- Step 3: 시승 거점 선택 -->
+            <template if:true={showStep3}>
+                <lightning-card title="Step 3: 시승 거점 선택" class="step-card">
+                    <div slot="actions">
+                        <lightning-button label="이전" variant="neutral" onclick={handlePreviousStep3} class="slds-m-right_small"></lightning-button>
+                        <template if:true={selectedDealer}>
+                            <lightning-button label="다음" variant="brand" onclick={handleNextStep3}></lightning-button>
+                        </template>
+                    </div>
+                    <div class="slds-p-around_medium">
+                        <div class="slds-text-heading_medium slds-m-bottom_medium">시승을 원하시는 거점을 선택해주세요</div>
+                        
+                        <div class="dealer-selection-grid">
+                            <div class="dealer-option {gangnamClass}" onclick={handleDealerSelect} data-dealer="gangnam">
+                                <div class="dealer-info">
+                                    <h3>강남점</h3>
+                                    <p>서울특별시 강남구 테헤란로 123</p>
+                                    <p class="dealer-phone">02-1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="dealer-option {seochoClass}" onclick={handleDealerSelect} data-dealer="seocho">
+                                <div class="dealer-info">
+                                    <h3>서초점</h3>
+                                    <p>서울특별시 서초구 서초대로 456</p>
+                                    <p class="dealer-phone">02-2345-6789</p>
+                                </div>
+                            </div>
+                            <div class="dealer-option {songpaClass}" onclick={handleDealerSelect} data-dealer="songpa">
+                                <div class="dealer-info">
+                                    <h3>송파점</h3>
+                                    <p>서울특별시 송파구 올림픽로 789</p>
+                                    <p class="dealer-phone">02-3456-7890</p>
+                                </div>
+                            </div>
+                            <div class="dealer-option {mapoClass}" onclick={handleDealerSelect} data-dealer="mapo">
+                                <div class="dealer-info">
+                                    <h3>마포점</h3>
+                                    <p>서울특별시 마포구 월드컵로 321</p>
+                                    <p class="dealer-phone">02-4567-8901</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <!-- Step 4: 시승 방법 선택 -->
+            <template if:true={showStep4}>
+                <lightning-card title="Step 4: 시승 방법 선택" class="step-card">
+                    <div slot="actions">
+                        <lightning-button label="이전" variant="neutral" onclick={handlePreviousStep4} class="slds-m-right_small"></lightning-button>
+                        <template if:true={selectedDriveMethod}>
+                            <lightning-button label="다음" variant="brand" onclick={handleNextStep4}></lightning-button>
+                        </template>
+                    </div>
+                    <div class="slds-p-around_medium">
+                        <div class="slds-text-heading_medium slds-m-bottom_medium">시승 방법을 선택해주세요</div>
+                        
+                        <div class="method-selection-grid">
+                            <div class="method-option {showroomClass}" onclick={handleMethodSelect} data-method="showroom">
+                                <div class="method-icon">
+                                    <lightning-icon icon-name="utility:location" size="large"></lightning-icon>
+                                </div>
+                                <div class="method-info">
+                                    <h3>전시장 방문</h3>
+                                    <p>전시장에서 직접 시승</p>
+                                    <p class="method-detail">담당자가 동행하여 시승</p>
+                                </div>
+                            </div>
+                            <div class="method-option {homeClass}" onclick={handleMethodSelect} data-method="home">
+                                <div class="method-icon">
+                                    <lightning-icon icon-name="utility:home" size="large"></lightning-icon>
+                                </div>
+                                <div class="method-info">
+                                    <h3>홈 시승</h3>
+                                    <p>고객님 집으로 차량 배송</p>
+                                    <p class="method-detail">원하시는 장소로 차량을 배송</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <!-- Step 5: 시승 일정 선택 -->
+            <template if:true={showStep5}>
+                <lightning-card title="Step 5: 시승 일정 선택" class="step-card">
+                    <div slot="actions">
+                        <lightning-button label="이전" variant="neutral" onclick={handlePreviousStep5} class="slds-m-right_small"></lightning-button>
+                        <template if:true={isStep5Valid}>
+                            <lightning-button label="다음" variant="brand" onclick={handleNextStep5}></lightning-button>
+                        </template>
+                    </div>
+                    <div class="slds-p-around_medium">
+                        <div class="slds-text-heading_medium slds-m-bottom_medium">시승 일정을 선택해주세요</div>
+                        
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input 
+                                    label="희망 날짜" 
+                                    type="date" 
+                                    value={preferredDate} 
+                                    onchange={handleDateChange}
+                                    required>
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox 
+                                    label="희망 시간" 
+                                    options={timeOptions} 
+                                    value={preferredTime} 
+                                    onchange={handleTimeChange}
+                                    required>
+                                </lightning-combobox>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-p-horizontal_small">
+                                <lightning-textarea 
+                                    label="추가 요청사항" 
+                                    value={additionalNotes} 
+                                    onchange={handleNotesChange}
+                                    placeholder="시승 시 특별히 확인하고 싶은 사항이 있으시면 입력해주세요">
+                                </lightning-textarea>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </template>
+
+            <!-- Step 6: 서비스 이용 동의 -->
+            <template if:true={showStep6}>
+                <lightning-card title="Step 6: 서비스 이용 동의" class="step-card">
+                    <div slot="actions">
+                        <lightning-button label="이전" variant="neutral" onclick={handlePreviousStep6} class="slds-m-right_small"></lightning-button>
+                        <template if:true={isStep6Valid}>
+                            <lightning-button label="신청 완료" variant="brand" onclick={handleSubmit}></lightning-button>
+                        </template>
+                    </div>
+                    <div class="slds-p-around_medium">
+                        <div class="slds-text-heading_medium slds-m-bottom_medium">서비스 이용에 동의해주세요</div>
+                        
+                        <div class="agreement-section">
+                            <div class="agreement-item">
+                                <lightning-input 
+                                    type="checkbox" 
+                                    label="개인정보 수집 및 이용 동의" 
+                                    checked={privacyAgreement}
+                                    onchange={handlePrivacyAgreement}>
+                                </lightning-input>
+                                <div class="agreement-detail">
+                                    시승 신청을 위해 개인정보를 수집하고 이용하는 것에 동의합니다.
+                                </div>
+                            </div>
+                            
+                            <div class="agreement-item">
+                                <lightning-input 
+                                    type="checkbox" 
+                                    label="마케팅 정보 수신 동의" 
+                                    checked={marketingAgreement}
+                                    onchange={handleMarketingAgreement}>
+                                </lightning-input>
+                                <div class="agreement-detail">
+                                    신차 출시 및 이벤트 정보를 받는 것에 동의합니다. (선택사항)
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 선택된 정보 요약 -->
+                        <div class="summary-section slds-m-top_large">
+                            <h3 class="slds-text-heading_small slds-m-bottom_small">신청 정보 요약</h3>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <p><strong>선택 차량:</strong> {selectedCarLabel}</p>
+                                    <p><strong>시승 거점:</strong> {selectedDealerLabel}</p>
+                                    <p><strong>시승 방법:</strong> {selectedDriveMethodLabel}</p>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <p><strong>희망 일정:</strong> {preferredDate} {preferredTimeLabel}</p>
+                                    <p><strong>이름:</strong> {userName}</p>
+                                    <p><strong>전화번호:</strong> {userPhone}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-card>
+            </template>
+        </div>
+    </div>
+</template>

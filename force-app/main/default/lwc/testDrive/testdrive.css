@@ -1,0 +1,321 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 진행 단계 표시 스타일 */
+.step-indicator {
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: #f3f3f3;
+    margin: 0 0.25rem;
+    transition: all 0.3s ease;
+    font-size: 0.75rem;
+}
+
+.step-indicator.active {
+    background-color: #0070d2;
+    color: white;
+}
+
+.step-number {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.step-label {
+    font-size: 0.7rem;
+    line-height: 1.2;
+}
+
+/* 카드 스타일 */
+.step-card {
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 개인정보 섹션 */
+.user-info-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+}
+
+.info-label {
+    display: block;
+    font-weight: bold;
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* 차량 선택 그리드 */
+.car-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.car-option {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.car-option:hover {
+    border-color: #0070d2;
+    box-shadow: 0 4px 12px rgba(0, 112, 210, 0.2);
+}
+
+.car-option.selected {
+    border-color: #0070d2;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 12px rgba(0, 112, 210, 0.3);
+}
+
+.car-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.car-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.125rem;
+}
+
+.car-info p {
+    margin: 0;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* 거점 선택 그리드 */
+.dealer-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dealer-option {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.dealer-option:hover {
+    border-color: #0070d2;
+    box-shadow: 0 4px 12px rgba(0, 112, 210, 0.2);
+}
+
+.dealer-option.selected {
+    border-color: #0070d2;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 12px rgba(0, 112, 210, 0.3);
+}
+
+.dealer-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.dealer-info p {
+    margin: 0.25rem 0;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.dealer-phone {
+    color: #0070d2 !important;
+    font-weight: 500;
+}
+
+/* 시승 방법 선택 그리드 */
+.method-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.method-option {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+    text-align: center;
+}
+
+.method-option:hover {
+    border-color: #0070d2;
+    box-shadow: 0 4px 12px rgba(0, 112, 210, 0.2);
+}
+
+.method-option.selected {
+    border-color: #0070d2;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 12px rgba(0, 112, 210, 0.3);
+}
+
+.method-icon {
+    margin-bottom: 1rem;
+    color: #0070d2;
+}
+
+.method-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.method-info p {
+    margin: 0.25rem 0;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.method-detail {
+    color: #0070d2 !important;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/* 동의 섹션 */
+.agreement-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.agreement-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 6px;
+    border-left: 4px solid #0070d2;
+}
+
+.agreement-detail {
+    margin-top: 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+/* 입력 필드 스타일 */
+.slds-input,
+.slds-combobox,
+.slds-textarea {
+    margin-bottom: 1rem;
+}
+
+/* 요약 섹션 */
+.summary-section {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #0070d2;
+}
+
+.summary-section h3 {
+    color: #0070d2;
+    margin-bottom: 1rem;
+}
+
+.summary-section p {
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.summary-section strong {
+    color: #333;
+}
+
+/* 버튼 스타일 */
+.slds-button {
+    min-width: 100px;
+}
+
+/* 비활성화된 버튼 스타일 */
+.slds-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #e0e0e0;
+    color: #666;
+}
+
+.slds-button:disabled:hover {
+    background-color: #e0e0e0;
+    color: #666;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .car-selection-grid,
+    .dealer-selection-grid,
+    .method-selection-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .step-indicator {
+        margin: 0 0.1rem;
+        padding: 0.5rem;
+    }
+    
+    .step-number {
+        font-size: 1rem;
+    }
+    
+    .step-label {
+        font-size: 0.65rem;
+    }
+    
+    .method-option {
+        padding: 1.5rem;
+    }
+}
+
+/* 애니메이션 */
+.content-area {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
