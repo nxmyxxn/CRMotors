@@ -104,8 +104,13 @@ export default class DriveConfig extends NavigationMixin(LightningElement) {
                 variant: 'success'
             }));
 
-            window.location.href = '/test/quotesummary';
-    
+            window.location.href = '/test/quotesummary'+
+                `?carName=${encodeURIComponent(this.carName)}` +
+                `&carLabel=${encodeURIComponent(this.carLabel)}` +
+                `&selectedTrim=${encodeURIComponent(this.selectedTrim)}` +
+                `&selectedColor=${encodeURIComponent(this.selectedColor)}` +
+                `&selectedOptions=${encodeURIComponent(JSON.stringify(this.selectedOptions))}`;
+            
             // 저장된 레코드 보기 (선택 사항)
             // this[NavigationMixin.Navigate]({
             //     type: 'standard__recordPage',

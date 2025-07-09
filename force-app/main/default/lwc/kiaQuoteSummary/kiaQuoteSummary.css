@@ -1,0 +1,23 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    width: 100%
+}
+
+.black-btn .slds-button {
+    background: #000 !important;
+    color: #fff !important;
+    border: none;
+    width: 100%;
+    max-width: 320px; /* 버튼 최대 너비 */
+    height: 48px;
+    font-size: 1.15rem;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: none;
+    margin: 0 auto;
+    display: block;
+    letter-spacing: 0.05em;
+}
