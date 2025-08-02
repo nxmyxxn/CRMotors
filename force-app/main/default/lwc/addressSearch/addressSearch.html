@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="주소 검색" icon-name="utility:location">
+        <div class="slds-p-around_medium">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="address-search">
+                    주소를 입력하세요
+                </label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                    <input 
+                        id="address-search"
+                        type="text" 
+                        class="slds-input" 
+                        placeholder="예: 서초대로, 강남구 테헤란로 등"
+                        value={searchQuery}
+                        oninput={handleSearchInput}
+                        onblur={handleBlur}
+                    />
+                    <template if:true={isLoading}>
+                        <lightning-spinner alternative-text="검색 중..." size="small" class="slds-input__icon slds-input__icon_right"></lightning-spinner>
+                    </template>
+                </div>
+            </div>
+
+            <!-- 검색 결과 표시 -->
+            <template if:true={showResults}>
+                <div class="slds-dropdown slds-dropdown_fluid slds-m-top_xxx-small search-results">
+                    <ul class="slds-dropdown__list" role="listbox">
+                        <template for:each={searchResults} for:item="address">
+                            <li key={address.id} 
+                                class="slds-dropdown__item" 
+                                role="option"
+                                data-id={address.id}
+                                onclick={handleAddressSelect}>
+                                <a href="#" class="slds-dropdown__link" role="option">
+                                    <div class="slds-media slds-media_center">
+                                        <div class="slds-media__figure">
+                                            <lightning-icon icon-name="utility:location" size="x-small"></lightning-icon>
+                                        </div>
+                                        <div class="slds-media__body">
+                                            <div class="slds-text-heading_small">{address.roadAddress}</div>
+                                            <div class="slds-text-body_small slds-text-color_weak">{address.jibunAddress}</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

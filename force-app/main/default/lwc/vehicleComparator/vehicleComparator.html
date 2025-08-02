@@ -1,0 +1,75 @@
+<template>
+    <!-- 선택화면 -->
+    <template if:true={isSelectionStep}>
+        <div class="modal-outer">
+            <div class="modal-inner">
+                <h2 class="header">비교할 차량 선택</h2>
+                <p class="desc">비교할 두 차량을 각각 선택하세요.</p>
+                <div class="vehicle-select-row">
+                    <lightning-combobox
+                        name="vehicle1"
+                        label="차량 1 선택"
+                        placeholder="차량 선택"
+                        options={allVehicleOptions}
+                        value={vehicle1Name}
+                        onchange={handleVehicle1Change}>
+                    </lightning-combobox>
+                    <span class="vs-txt">VS</span>
+                    <lightning-combobox
+                        name="vehicle2"
+                        label="차량 2 선택"
+                        placeholder="차량 선택"
+                        options={allVehicleOptions}
+                        value={vehicle2Name}
+                        onchange={handleVehicle2Change}>
+                    </lightning-combobox>
+                </div>
+                <lightning-button
+                    class="compare-btn"
+                    label="비교하기"
+                    variant="brand"
+                    onclick={showComparison}
+                    disabled={isCompareButtonDisabled}>
+                </lightning-button>
+            </div>
+        </div>
+    </template>
+
+    <!-- 비교화면 -->
+    <template if:true={isComparisonStep}>
+        <lightning-card title="차량 성능 비교" icon-name="standard:comparison">
+            <lightning-button label="다시 선택" slot="actions" onclick={showSelection}></lightning-button>
+            <div class="compare-content">
+                <!-- 차량 이미지/이름 표시부 -->
+                <div class="compare-vehicles-row">
+                    <template for:each={selectedVehicles} for:item="vehicle">
+                        <div key={vehicle.name} class="vehicle-card">
+                            <img src={vehicle.imageUrl} alt={vehicle.name} class="vehicle-image"/>
+                            <div class="vehicle-name">{vehicle.name}</div>
+                        </div>
+                    </template>
+                </div>
+                <!-- 옵션 그래프 -->
+                <div class="comparison-grid">
+                    <template for:each={comparisonMetrics} for:item="metric">
+                        <div key={metric.apiName} class="metric-row">
+                            <div class="metric-label">{metric.label}</div>
+                            <div class="bars-container">
+                                <template for:each={metric.vehicles} for:item="v">
+                                    <div key={v.name} class="bar-wrapper">
+                                        <span class="vehicle-name-label">{v.name}</span>
+                                        <div class="bar-background">
+                                            <div class="bar" style={v.style}>
+                                                <span class="bar-value">{v.value} {metric.unit}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 80px;
+}
+
+.left-panel {
+    width: 65%; /* 70% 차지 */
+    margin: 10px;
+}
+
+.right-panel {
+    width: 35%; /* 30% 차지 */
+    margin: 10px;
+}
+
+.car-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+.section:nth-child(n) {
+    margin: 0;
+    padding: 0;
+}
+lightning-combobox {
+    --slds-c-combobox-sizing-min-height: 5px !important;
+    --slds-c-combobox-sizing-max-height: 5px !important;
+}
+
+.disclaimer {
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+}
+
+.complete-btn-section {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+} 
+.car-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+label {
+    font-weight: 700; 
+    font-size: 1.3em; 
+    color: #333;
+    margin-bottom: 3px;
+    display: block;
+}
+
+lightning-combobox {
+    margin-top: 0px;
+}

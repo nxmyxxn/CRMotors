@@ -1,0 +1,269 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+}
+
+.main-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.left-panel {
+    flex: 2;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 가격 헤더 */
+.price-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+.price-label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+}
+
+.total-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 모델 섹션 */
+.model-section {
+    margin-bottom: 25px;
+}
+
+.model-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.model-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+}
+
+.trim-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.trim-name {
+    font-size: 1em;
+    color: #555;
+}
+
+.trim-price {
+    font-weight: 600;
+    color: #333;
+    margin-left: auto;
+}
+
+/* 컬러 섹션 */
+.color-section {
+    margin-bottom: 25px;
+}
+
+.color-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.color-name {
+    font-size: 1em;
+    color: #555;
+}
+
+.color-price {
+    font-weight: 600;
+    color: #333;
+    margin-left: auto;
+}
+
+/* 옵션 섹션 */
+.options-section {
+    margin-bottom: 25px;
+}
+
+.options-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.options-label, .color-label {
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+}
+
+.options-total-price {
+    font-weight: 600;
+    color: #333;
+    margin-left: auto;
+}
+
+.option-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.option-name {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.option-price {
+    font-weight: 600;
+    color: #333;
+}
+
+/* 변경 링크 - 회색으로 흐리게, 작게 */
+.change-link {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.8em;
+    cursor: pointer;
+    white-space: nowrap;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.change-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* 차량 이미지 카드 */
+.car-image-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.car-info {
+    margin-bottom: 20px;
+}
+
+.car-model {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.car-trim {
+    font-size: 1em;
+    color: #666;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.car-disclaimer {
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* 버튼 컨테이너 */
+.button-container {
+    margin-top: 40px;
+    margin-left: -30px;
+    margin-right: -30px;
+    padding: 0 30px;
+    width: calc(100% + 60px) !important;
+    box-sizing: border-box !important;
+}
+
+.black-btn {
+    background-color: #333 !important;
+    border-color: #333 !important;
+    color: white !important;
+}
+
+.black-btn:hover {
+    background-color: #555 !important;
+    border-color: #555 !important;
+}
+
+/* 시승 신청 버튼 스타일 */
+.button-container lightning-button {
+    width: 100% !important;
+}
+
+.button-container lightning-button::part(base) {
+    width: 100% !important;
+    max-width: none !important;
+    height: 60px !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+}
+
+.full-width-button {
+    width: 100% !important;
+    display: block !important;
+}
+
+.full-width-button::part(base) {
+    width: 100% !important;
+    max-width: none !important;
+    height: 60px !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .left-panel {
+        flex: none;
+    }
+    
+    .right-panel {
+        flex: none;
+    }
+}

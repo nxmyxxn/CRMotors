@@ -1,0 +1,52 @@
+<template>
+  <lightning-card title="서비스 정보 조회">
+    <div class="search-section">
+      <lightning-combobox
+        name="account"
+        label="계정 선택"
+        value={selectedAccountId}
+        options={accountOptions}
+        onchange={handleAccountChange}>
+      </lightning-combobox>
+
+      <lightning-combobox
+        name="case"
+        label="서비스 제목 선택"
+        value={selectedCaseId}
+        options={caseOptions}
+        onchange={handleCaseChange}>
+      </lightning-combobox>
+    </div>
+
+    <template if:true={caseDetail}>
+      <div class="section-card">
+        <div class="section-title">서비스 정보</div>
+        <div class="info-grid">
+          <div><strong>제목:</strong> <a href={caseLink}>{caseDetail.caseSubject}</a></div>
+          <div><strong>유형:</strong> {caseDetail.serviceType}</div>
+          <div><strong>신청일자:</strong> {caseDetail.preferredDate}</div>
+          <div><strong>상태:</strong> {caseDetail.caseStatus}</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">자산 정보</div>
+        <div class="info-grid">
+          <div><strong>자산:</strong> <a href={assetLink}>{caseDetail.assetName}</a></div>
+          <div><strong>제품명:</strong> {caseDetail.productName}</div>
+          <div><strong>차대번호:</strong> {caseDetail.vin}</div>
+          <div><strong>구매일자:</strong> {caseDetail.purchaseDate}</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-title">보증 정보</div>
+        <div class="info-grid">
+          <div><strong>보증:</strong> <a href={warrantyLink}>{caseDetail.warrantyName}</a></div>
+          <div><strong>등록일자:</strong> {caseDetail.registrationDate}</div>
+          <div><strong>만료일자:</strong> {caseDetail.expirationDate}</div>
+        </div>
+      </div>
+    </template>
+  </lightning-card>
+</template>

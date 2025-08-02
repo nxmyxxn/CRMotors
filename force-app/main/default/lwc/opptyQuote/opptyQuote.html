@@ -1,0 +1,153 @@
+<template>
+    <!-- Quote 섹션 -->
+    <template if:true={showQuotes}>
+        <div class="quotes-section">
+            <div class="section-header">
+                <h2>견적 정보</h2>
+                <lightning-button 
+                    label="새 차량 견적 작성" 
+                    variant="brand" 
+                    onclick={handleShowCarSelector}>
+                </lightning-button>
+            </div>
+            
+            <template if:true={formattedQuotes.length}>
+                <div class="quotes-grid">
+                    <template for:each={formattedQuotes} for:item="quote">
+                        <div key={quote.Id} class="quote-card">
+                            <div class="quote-header">
+                                <h3>{quote.Car_Name__c}</h3>
+                            </div>
+                            <div class="quote-info">
+                                <div class="info-row">
+                                    <span class="label">차량</span>
+                                    <span class="value">{quote.Car_Name__c}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">트림</span>
+                                    <span class="value">{quote.Trim__c}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">컬러</span>
+                                    <span class="value">{quote.Color__c}</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">옵션</span>
+                                    <span class="value">{quote.Option__c}</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            
+            <template if:false={formattedQuotes.length}>
+                <div class="no-quotes">
+                    <p>등록된 견적이 없습니다.</p>
+                    <lightning-button 
+                        label="첫 견적 작성하기" 
+                        variant="brand" 
+                        onclick={handleShowCarSelector}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </template>
+
+    <!-- 차량 선택 섹션 -->
+    <template if:true={showCarSelector}>
+        <div class="car-selector-container">
+            <div class="section-header">
+                <h2>차량 견적 작성</h2>
+                <lightning-layout>
+                    <lightning-layout-item size="12" padding="around-small">
+                        <lightning-button 
+                            label="견적 정보 보기" 
+                            variant="neutral" 
+                            onclick={handleShowQuotes}>
+                        </lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+            </div>
+            
+            
+            <template for:each={cars} for:item="car">
+                <div key={car.name} class="car-card" onclick={handleCarSelect} 
+                    data-car={car.name} data-label={car.label}>
+                    <img src={car.image} alt={car.label} class="car-image" />
+                    <div class="car-label">{car.label}</div>
+                </div>
+            </template>
+        </div>
+
+        <template if:true={carName}>
+            <div class="container">
+                <div class="left-panel">
+                    <h1 class="car-title">{carLabel}</h1>            
+                    <img src={carImage} alt={carName} class="car-image2" />
+                    <p class="disclaimer">본 차량의 이미지는 실제와 다를 수 있습니다.</p>
+                </div>
+
+                <div class="right-panel">
+                    <div class="section">
+                        <label>Trim</label>
+                        <lightning-combobox
+                            name="trim"
+                            value={selectedTrim}
+                            options={trimOptions}
+                            onchange={handleTrimChange}>
+                        </lightning-combobox>
+                    </div>
+        
+                    <div class="section">
+                        <label>Color</label>
+                        <lightning-radio-group
+                            name="color"
+                            options={colorChoices}
+                            value={selectedColor}
+                            type="radio"
+                            onchange={handleColorChange}>
+                        </lightning-radio-group>
+                    </div>
+        
+                    <div class="section">
+                        <label>Option</label>
+                        <lightning-checkbox-group
+                            name="options"
+                            options={optionChoices}
+                            value={selectedOptions}
+                            onchange={handleOptionChange}>
+                        </lightning-checkbox-group>
+                    </div>
+                    
+                    <div class="section complete-btn-section">
+                        <lightning-button
+                            variant="brand"
+                            label="검색"
+                            onclick={handleSearch}>
+                        </lightning-button>
+                    </div>
+                </div>
+
+                <template if:true={showResult}>
+                    <div class="search-result-card search-result-bottom">
+                        <div class="search-result-title">검색 결과</div>
+                        <div class="search-result-info">
+                            <div><span class="label">제품명:</span> {foundProductName}</div>
+                            <div><span class="label">제품코드:</span> {foundProductCode}</div>
+                            <div><span class="label">차량 가격:</span> {foundPrice} 원</div>
+                        </div>
+                        <lightning-button
+                            variant="success"
+                            label="차량 견적 추가(OLI 추가)"
+                            onclick={handleAddToOLI}>
+                        </lightning-button>
+                    </div>
+                </template>
+            </div>
+        </template>   
+    </template>
+</template>
+

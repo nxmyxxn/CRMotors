@@ -1,0 +1,24 @@
+<template>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src={logoImage} alt="Logo" class="navbar-logo" />
+        </div>
+        <button class="navbar-hamburger" onclick={toggleMenu} aria-label="메뉴 열기">
+            <span class="hamburger-icon">&#9776;</span>
+        </button>
+        <div class="navbar-right" if:false={isMenuOpenOnMobile}>
+            <a href="/event" class="navbar-tab">차량</a>
+            <a href="/purchase" class="navbar-tab">구매</a>
+            <a href="/experience" class="navbar-tab">체험</a>
+            <a href="/event" class="navbar-tab">이벤트</a>
+            <a href="/support" class="navbar-tab">고객지원</a>
+        </div>
+        <div class="navbar-mobile-menu" if:true={isMenuOpenOnMobile}>
+            <a href="/event" class="navbar-tab" onclick={closeMenu}>차량</a>
+            <a href="/purchase" class="navbar-tab" onclick={closeMenu}>구매</a>
+            <a href="/experience" class="navbar-tab" onclick={closeMenu}>체험</a>
+            <a href="/event" class="navbar-tab" onclick={closeMenu}>이벤트</a>
+            <a href="/support" class="navbar-tab" onclick={closeMenu}>고객지원</a>
+        </div>
+    </nav>
+</template>

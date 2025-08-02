@@ -1,0 +1,138 @@
+.modal-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    background: #f7fafe;
+}
+.modal-inner {
+    width: 420px;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0,50,130,0.10);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header {
+    text-align: center;
+    margin-bottom: 0.7rem;
+}
+.desc {
+    color: #678;
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+    text-align: center;
+}
+.vehicle-select-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+}
+.vs-txt {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0096d3;
+    padding: 0 0.5rem;
+}
+.compare-btn {
+    width: 100%;
+    margin-top: 0.6rem;
+    text-align: right;
+}
+.compare-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.compare-vehicles-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2.2rem;
+}
+.vehicle-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1.3rem 1.2rem 0.7rem;
+    text-align: center;
+    background: #fafcff;
+    width: 140px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.vehicle-image {
+    max-width: 95px;
+    min-height: 75px;
+    object-fit: contain;
+    margin-bottom: 0.9rem;
+}
+.vehicle-name {
+    font-size: 1.07rem;
+    font-weight: 600;
+    color: #234;
+    margin-top: 0.2rem;
+}
+.comparison-grid {
+    margin-top: 1.2rem;
+    width: 430px;
+    max-width: 95vw;
+}
+.metric-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+.metric-label {
+    flex: 1.2;
+    font-weight: bold;
+    padding-right: 1rem;
+    min-width: 120px;
+    color: #076;
+}
+.bars-container {
+    flex: 2.3;
+}
+.bar-wrapper {
+    margin-bottom: 0.7rem;
+}
+.vehicle-name-label {
+    font-size: 0.89rem;
+    color: #666;
+    margin-bottom: 0.18rem;
+    display: block;
+}
+.bar-background {
+    background-color: #eef3fa;
+    border-radius: 3px;
+    height: 23px;
+}
+.bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.8s;
+    background-color: #0096d3;
+}
+.bar-value {
+    padding: 4px 10px;
+    color: white;
+    font-size: 0.78rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+@keyframes growWidth {
+  from { width: 0; }
+  to   { width: var(--final-width); }
+}
+.bar {
+  height: 100%;
+  border-radius: 3px;
+  background-color: #0096d3;
+  animation: growWidth 0.5s cubic-bezier(0.52, 0.01, 0.16, 1.01) forwards;
+}

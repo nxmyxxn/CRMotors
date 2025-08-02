@@ -1,0 +1,18 @@
+<template>
+    <div class="custom-slider">
+        <button class="slider-btn" onclick={prevImage}>&lt;</button>
+        <img src={currentImage.image} alt={currentImage.label} class="slider-img"/> 
+        <button class="slider-btn" onclick={nextImage}>&gt;</button>
+    </div>
+
+    
+    <div class="car-selector-container">
+        <template for:each={cars} for:item="car">
+            <div key={car.name} class="car-card" onclick={handleCarSelect} 
+                data-car={car.name} data-label={car.label}>
+                <img src={car.image} alt={car.label} class="car-image" />
+                <div class="car-label">{car.label}</div>
+            </div>
+        </template>
+    </div>
+</template>

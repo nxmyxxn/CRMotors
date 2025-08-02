@@ -1,0 +1,21 @@
+<template>
+  <lightning-card title="Warranty Info" icon-name="standard:entitlement_policy">
+    <template if:true={warranty}>
+      <div class="slds-p-horizontal_medium slds-p-vertical_small">
+        <p><strong>Name:</strong> {warranty.Name}</p>
+        <p><strong>Registration Date:</strong> {warranty.Registration_Date__c}</p>
+        <p><strong>Expiration Date:</strong> {warranty.Expiration_Date__c}</p>
+        <p><strong>Warranty Period:</strong> {warranty.Warranty_Period__c} months</p>
+        <p><strong>Warranty Mileage:</strong> {warranty.Warranty_Mileage__c} km</p>
+        <p><strong>Related Asset:</strong> {warranty.Warranty_Related_Asset__r.Name}</p>
+        <p><strong>Related Customer:</strong> {warranty.Warranty_Related_Account__r.Name}</p>
+      </div>
+    </template>
+
+    <template if:false={warranty}>
+      <div class="slds-p-horizontal_medium slds-p-vertical_small">
+        <p>No warranty found for this customer.</p>
+      </div>
+    </template>
+  </lightning-card>
+</template>

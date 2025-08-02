@@ -1,0 +1,86 @@
+<template>
+    <!-- 전체를 감싸는 컨테이너 -->
+    <div class="container slds-p-around_large">
+        <div class="slds-text-align_center slds-m-bottom_large">
+            <lightning-icon icon-name="utility:check" size="large" variant="success"></lightning-icon>
+            <h1 class="slds-text-heading_large slds-m-top_medium">고객님의 {carLabel} 견적이 완성되었습니다.</h1>
+        </div>
+
+        <!-- 메인 콘텐츠 영역 (왼쪽: 가격 정보, 오른쪽: 차량 이미지) -->
+        <div class="main-content">
+            <!-- 왼쪽 가격 정보 패널 -->
+            <div class="left-panel">
+                <!-- 차량 가격 헤더 -->
+                <div class="price-header">
+                    <span class="price-label">차량 가격</span>
+                    <span class="total-price">{formattedTotalPrice}원</span>
+                </div>
+                
+                <!-- 모델 및 트림 정보 -->
+                <div class="model-section">
+                    <div class="model-row">
+                        <span class="model-name">{carLabel}</span>
+                        <a href="#" onclick={handleModelChange} class="change-link">모델 변경</a>
+                    </div>
+                    <div class="trim-row">
+                        <span class="trim-name">{selectedTrim}</span>
+                        <a href="#" onclick={handleTrimChange} class="change-link">트림 변경</a>
+                        <span class="trim-price">{formattedTrimPrice}원</span>
+                    </div>
+                <!-- 컬러 정보 -->
+                <div class="color-section">
+                    <div class="color-header">
+                        <span class="color-label">컬러</span>
+                    </div>
+                    <div class="color-row">
+                        <span class="color-name">{selectedColor}</span>
+                        <a href="#" onclick={handleColorChange} class="change-link">컬러 변경</a>
+                        <span class="color-price">{formattedColorPrice}원</span>
+                    </div>
+                </div>
+
+                <!-- 선택 옵션 정보 -->
+                <div class="options-section">
+                    <div class="options-header">
+                        <span class="options-label">선택 옵션</span>
+                        <a href="#" onclick={handleOptionsChange} class="change-link">옵션 변경</a>
+                        <span class="options-total-price">{formattedOptionsTotalPrice}원</span>
+                    </div>
+                    <template if:true={selectedOptionsWithPrice}>
+                        <template for:each={selectedOptionsWithPrice} for:item="option">
+                            <div key={option.id} class="option-row">
+                                <span class="option-name">{option.name}</span>
+                                <span class="option-price">{option.formattedPrice}원</span>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+            </div>
+            </div>
+
+            <!-- 오른쪽 차량 이미지 패널 -->
+            <div class="right-panel">
+                <div class="car-image-card">
+                    <div class="car-info">
+                        <div class="car-model">{carLabel}</div>
+                        <div class="car-trim">{selectedTrim}</div>
+                    </div>
+                    <img src={carImage} alt="차량 이미지" class="car-image"/>
+                    <div class="car-disclaimer">
+                        * 실제 차량과 다를 수 있습니다.
+                    </div>
+                    <div class="button-container slds-m-top_large slds-text-align_center">
+                        <div>
+                            <lightning-button 
+                                label="시승 신청" 
+                                variant="brand" 
+                                onclick={handleDriveRequest}
+                                style="width: 100%; display: block;">
+                            </lightning-button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>        
+    </div>
+</template>

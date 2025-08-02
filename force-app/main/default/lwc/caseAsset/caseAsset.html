@@ -1,0 +1,9 @@
+<!-- caseAsset.html -->
+<template>
+    <lightning-card title="관련 자산 정보" if:true={asset}>
+        <p class="slds-p-horizontal_small">자산명: {asset.Name}</p>
+        <p class="slds-p-horizontal_small">제품: {asset.Product2.Name}</p>
+        <p class="slds-p-horizontal_small">구매일: {asset.PurchaseDate}</p>
+        <p class="slds-p-horizontal_small">상태: {asset.Status}</p>
+    </lightning-card>
+</template>

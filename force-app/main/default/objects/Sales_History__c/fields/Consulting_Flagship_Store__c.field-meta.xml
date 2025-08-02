@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consulting_Flagship_Store__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>플래그십 스토어</label>
+    <referenceTo>Flagship_Store__c</referenceTo>
+    <relationshipLabel>상담이력</relationshipLabel>
+    <relationshipName>Consulting_Flagship_StoreDnbZ</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

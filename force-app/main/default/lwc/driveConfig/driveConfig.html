@@ -1,0 +1,50 @@
+<template>
+    <div class="container">
+        <div class="left-panel">
+            <h1 class="car-title">{carLabel}</h1>            
+            <img src={carImage} alt={carName} class="car-image" />
+            <p class="disclaimer">본 차량의 이미지는 실제와 다를 수 있습니다.</p>
+        </div>
+        <div class="right-panel">
+            <div class="section">
+                <label>Trim</label>
+                <lightning-combobox
+                    name="trim"
+                    value={selectedTrim}
+                    options={trimOptions}
+                    onchange={handleTrimChange}>
+                </lightning-combobox>
+            </div>
+
+            <div class="section">
+                <label>Color</label>
+                <lightning-radio-group
+                    name="color"
+                    options={colorChoices}
+                    value={selectedColor}
+                    type="radio"
+                    onchange={handleColorChange}>
+                </lightning-radio-group>
+            </div>
+
+            <div class="section">
+                <label>Option</label>
+                <lightning-checkbox-group
+                    name="options"
+                    options={optionChoices}
+                    value={selectedOptions}
+                    onchange={handleOptionChange}>
+                </lightning-checkbox-group>
+            </div>
+
+            <div class="section complete-btn-section">
+                <lightning-button
+                    variant="brand"
+                    label="견적완료"
+                    onclick={handleCompleteEstimate}>
+                </lightning-button>
+            </div>
+
+        </div>
+    </div>
+</template>

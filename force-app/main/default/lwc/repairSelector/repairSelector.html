@@ -1,0 +1,43 @@
+<template>
+    <div class="full-wrapper">
+        <div class="content-box">
+            <div class="step-header">STEP. 3</div>
+            <div class="repair-section">
+                <p class="title">정비 항목 선택</p>
+
+                <template if:true={availableOptions}>
+                    <div class="multi-select-box">
+                        <label class="slds-form-element__label">정비 항목 (다중 선택 가능)</label>
+                        <template for:each={availableOptions} for:item="option">
+                            <div key={option.value} class="option-row">
+                                <lightning-input 
+                                    type="checkbox"
+                                    label={option.label}
+                                    data-value={option.value}
+                                    checked={option.isSelected}
+                                    onchange={handleDetailChange}>
+                                </lightning-input>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+
+                <lightning-textarea
+                    label="기타 설명"
+                    value={description}
+                    onchange={handleDescriptionChange}
+                    placeholder="겪고 있는 문제를 구체적으로 입력해주세요">
+                </lightning-textarea>
+            </div>
+
+            <div class="next-button">
+                <lightning-button 
+                    label="Next" 
+                    variant="brand" 
+                    disabled={isNextDisabled}
+                    onclick={handleNext}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,27 @@
+<!-- ✅ 수정된 파일: customerAsset.html -->
+<template>
+    <div class="full-wrapper">
+        <div class="content-box">
+            <div class="step-header">STEP. 2</div>
+            <div class="asset-info">
+                <p class="title">보유 차량 정보</p>
+                <template if:true={assets}>
+                    <template for:each={assets} for:item="asset">
+                        <div key={asset.Id} class="asset-card">
+                            <p><strong>차량명:</strong> {asset.Name}</p>
+                            <p><strong>연식:</strong> {asset.Year__c}</p>
+                            <p><strong>차대번호(VIN):</strong> {asset.Asset_Related_VIN__c}</p>
+                            <p><strong>주행 가능 거리:</strong> {asset.RangeKm__c} km</p>
+                        </div>
+                    </template>
+                </template>
+                <template if:false={assets}>
+                    <p>등록된 차량이 없습니다.</p>
+                </template>
+            </div>
+            <div class="next-button">
+                <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

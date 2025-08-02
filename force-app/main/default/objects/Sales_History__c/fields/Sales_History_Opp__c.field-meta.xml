@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_History_Opp__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>관련 기회</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>상담이력</relationshipLabel>
+    <relationshipName>Sales_History_Opp_qfDl</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

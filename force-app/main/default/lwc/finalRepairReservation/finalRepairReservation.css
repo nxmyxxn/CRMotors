@@ -1,0 +1,50 @@
+.full-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.content-box {
+    width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.step-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.section .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.time-slot-list {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+
+.slot-button {
+    width: 100%;
+}
+
+.selected-info {
+    margin-top: 1rem;
+    font-size: 16px;
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+.next-button {
+    margin-top: 2rem;
+    text-align: right;
+}

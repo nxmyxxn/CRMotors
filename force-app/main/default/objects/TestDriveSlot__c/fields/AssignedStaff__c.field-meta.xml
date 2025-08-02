@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AssignedStaff__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>시승 담당 직원</label>
+    <referenceTo>TestDriveStaff__c</referenceTo>
+    <relationshipLabel>예약 가능 시간 슬롯</relationshipLabel>
+    <relationshipName>AvailableTimeSlot</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

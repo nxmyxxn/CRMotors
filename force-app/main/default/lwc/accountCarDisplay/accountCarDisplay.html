@@ -1,0 +1,9 @@
+<template>
+    <template lwc:if={showImage}>
+        <lightning-card title={cardTitle} icon-name="utility:image">
+            <div class="slds-var-m-around_medium" style="text-align: center;">
+                <img src={carImageUrl} alt="차량 이미지" style="width:auto; max-width:400px; display: block; margin-left: auto; margin-right: auto;"/>
+            </div>
+        </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,41 @@
+<!-- ✅ reservationFlow.html 수정본 (STEP6 이벤트 리스너 추가) -->
+<template>
+    <template if:true={isStep1}>
+        <c-customer-info onnextstep={handleStep1}></c-customer-info>
+    </template>
+    <template if:true={isStep2}>
+        <c-customer-asset account-id={customerInfo.Id} onnextstep={handleStep2}></c-customer-asset>
+    </template>
+    <template if:true={isStep3}>
+        <c-repair-selector onnextstep={handleStep3}></c-repair-selector>
+    </template>
+    <template if:true={isStep4}>
+        <c-repair-shop-selector onnextstep={handleStep4}></c-repair-shop-selector>
+    </template>
+    <template if:true={isStep5}>
+        <c-final-repair-reservation
+            account-id={customerInfo.accountId}
+            repair-shop-id={repairShopId}
+            selected-service-details={serviceDetails.ServiceReservationTypeDetails__c}
+            onnextstep={handleStep5}>
+        </c-final-repair-reservation>
+    </template>
+    <template if:true={isStep6}>
+        <c-step6-final-confirm
+            account-id={customerInfo.accountId}
+            selected-service-details={serviceDetails.ServiceReservationTypeDetails__c}
+            repair-shop-id={repairShopId}
+            repair-shop-name={repairShopName}
+            selected-date={selectedDate}
+            selected-slot-time={selectedSlotTime}
+            onnextstep={handleStep6}>
+        </c-step6-final-confirm>
+    </template>
+    <template if:true={isStep7}>
+        <div class="completion-message">
+            <h2>🎉 예약이 완료되었습니다!</h2>
+            <p>정비 예약이 성공적으로 접수되었습니다.</p>
+            <p>담당자가 곧 연락드릴 예정입니다.</p>
+        </div>
+    </template>
+</template>

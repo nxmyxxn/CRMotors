@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SelectTechnician__c</fullName>
+    <label>정비사 선택</label>
+    <referenceTo>Technician__c</referenceTo>
+    <relationshipLabel>정비사 근무시간</relationshipLabel>
+    <relationshipName>SelectTechnicianQbab</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

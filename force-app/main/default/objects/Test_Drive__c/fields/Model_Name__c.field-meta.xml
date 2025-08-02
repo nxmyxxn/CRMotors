@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Model_Name__c</fullName>
+    <label>모델명</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EV3</fullName>
+                <default>false</default>
+                <label>EV3</label>
+            </value>
+            <value>
+                <fullName>EV4</fullName>
+                <default>false</default>
+                <label>EV4</label>
+            </value>
+            <value>
+                <fullName>EV6</fullName>
+                <default>false</default>
+                <label>EV6</label>
+            </value>
+            <value>
+                <fullName>EV9</fullName>
+                <default>false</default>
+                <label>EV9</label>
+            </value>
+            <value>
+                <fullName>rayev</fullName>
+                <default>false</default>
+                <label>레이 EV</label>
+            </value>
+            <value>
+                <fullName>소울 EV</fullName>
+                <default>false</default>
+                <label>소울 EV</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

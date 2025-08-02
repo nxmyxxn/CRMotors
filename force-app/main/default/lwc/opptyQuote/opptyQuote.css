@@ -1,0 +1,306 @@
+/* Quote 섹션 스타일 */
+.quotes-section {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.quote-card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.quote-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.quote-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.quote-status {
+    color: #28a745;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    background: #d4edda;
+    border-radius: 4px;
+}
+
+.quote-info {
+    margin-bottom: 15px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.info-row .label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.info-row .value {
+    color: #6c757d;
+}
+
+.total-amount {
+    font-weight: 700;
+    color: #28a745;
+    font-size: 1.1rem;
+}
+
+.quote-description {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.quote-description p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+    white-space: pre-line;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.detail-row .label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.detail-row .value {
+    color: #6c757d;
+}
+
+.line-items-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e1e5e9;
+}
+
+.line-items-section h4 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.line-item {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.line-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.product-name {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.line-item-total {
+    font-weight: 600;
+    color: #28a745;
+}
+
+.line-item-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.detail {
+    font-size: 0.8rem;
+    color: #6c757d;
+    background: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.no-quotes {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+}
+
+.no-quotes p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* 기존 스타일 유지 */
+.car-selector-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.car-card {
+    width: 200px;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.car-card:hover {
+    border-color: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.car-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.car-label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-panel {
+    flex: 1;
+    text-align: center;
+}
+
+.car-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.car-image2 {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.disclaimer {
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+.section label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.complete-btn-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.search-result-card {
+    background: white;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.search-result-bottom {
+    margin-top: 30px;
+}
+
+.search-result-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.search-result-info {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.search-result-info div {
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.search-result-info .label {
+    font-weight: 600;
+    color: #495057;
+    margin-right: 10px;
+}

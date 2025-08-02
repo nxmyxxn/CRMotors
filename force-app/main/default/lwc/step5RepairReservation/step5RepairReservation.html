@@ -1,0 +1,57 @@
+<template>
+    <div class="full-wrapper">
+        <div class="content-box">
+            <div class="step-header">STEP. 5</div>
+            <div class="section">
+                <p class="title">시승 예약</p>
+                <lightning-input 
+                    type="date" 
+                    label="예약 날짜" 
+                    value={selectedDate} 
+                    onchange={handleDateChange}>
+                </lightning-input>
+                
+                <template if:true={hasSlots}>
+                    <div class="time-slot-list">
+                        <p>가능한 시간대 선택</p>
+                        <template for:each={availableTimeSlots} for:item="slot">
+                            <div key={slot.slotId} class="time-slot">
+                                <lightning-button 
+                                    label={slot.label} 
+                                    variant={slot.isAvailable ? "neutral" : "destructive"}
+                                    data-slot-id={slot.slotId} 
+                                    onclick={handleSlotSelect} 
+                                    disabled={slot.isAvailable ? false : true}
+                                    class={slot.isAvailable ? "slot-button available" : "slot-button unavailable"}>
+                                </lightning-button>
+                                <template if:false={slot.isAvailable}>
+                                    <span class="unavailable-text">예약됨</span>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                
+                <template if:true={selectedSlot}>
+                    <div class="selected-info">
+                        <p>선택된 시간: {selectedSlot.label}</p>
+                        <p>차량: {carModel} - {trim} - {color}</p>
+                        <template if:true={options}>
+                            <p>옵션: {options}</p>
+                        </template>
+                    </div>
+                </template>
+            </div>
+            
+            <div class="next-button">
+                <lightning-button 
+                    label={submitting ? "예약 중..." : "예약 완료"} 
+                    variant="brand" 
+                    onclick={handleNext} 
+                    disabled={isNextDisabled}
+                    loading={submitting}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

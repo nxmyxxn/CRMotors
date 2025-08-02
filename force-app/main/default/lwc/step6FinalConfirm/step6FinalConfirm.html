@@ -1,0 +1,33 @@
+<!-- ✅ 새로 생성된 파일: step6FinalConfirm.html (STEP6) -->
+<template>
+    <div class="full-wrapper">
+        <div class="content-box">
+            <div class="step-header">STEP. 6</div>
+            <div class="section">
+                <p class="title">예약 정보 확인</p>
+
+                <div class="summary-box">
+                    <p><strong>정비 항목:</strong> {serviceDetailsLabel}</p>
+                    <p><strong>정비소:</strong> {repairShopName}</p>
+                    <p><strong>예약 일시:</strong> {fullDateTime}</p>
+                </div>
+
+                <lightning-textarea
+                    label="추가 설명"
+                    value={description}
+                    onchange={handleDescriptionChange}
+                    placeholder="추가 요청 사항이나 참고사항이 있다면 입력해주세요.">
+                </lightning-textarea>
+            </div>
+
+            <div class="next-button">
+                <lightning-button
+                    label="예약하기"
+                    variant="brand"
+                    onclick={handleSubmit}
+                    disabled={submitting}>
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

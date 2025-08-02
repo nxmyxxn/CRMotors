@@ -1,0 +1,17 @@
+<template>
+    <div class="card">
+        <div class="card-header">
+            <img src={user.MediumPhotoUrl} alt="Profile Image" class="profile-img" />
+            <div class="card-header-text">
+                <h1>{user.Name}</h1>
+                <p class="location">CRMotors, Korea</p>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <p><b>이메일:</b> {user.Email}</p>
+            <p><b>부서:</b> {user.Department}</p>
+            <p><b>직급:</b> {user.Title}</p>
+        </div>
+    </div>
+</template>

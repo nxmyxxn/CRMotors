@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="주소 검색 및 지도">
+        <lightning-input label="주소 검색" onchange={handleSearch} type="search" value={searchQuery}></lightning-input>
+        <ul class="suggestions slds-box slds-m-top_x-small">
+            <template for:each={suggestions} for:item="item">
+                <li key={item.place_id} data-id={item.place_id} onclick={handleSelect} class="slds-listbox__item slds-p-around_x-small slds-truncate">
+                    {item.description}
+                </li>
+            </template>
+        </ul>
+        <lightning-map
+            map-markers={mapMarkers}
+            zoom-level="15"
+            center={mapCenter}
+        ></lightning-map>
+    </lightning-card>
+</template>

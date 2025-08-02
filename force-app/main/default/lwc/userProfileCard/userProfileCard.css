@@ -1,0 +1,50 @@
+.card {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    background-color: #eaf0f6;
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.card-header-text h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-header-text p.location {
+    margin: 2px 0 0 0;
+    font-size: 13px;
+    color: #555;
+}
+
+.card-body {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.card-body p {
+    margin: 4px 0;
+}
+
+.card-body b {
+    font-weight: 600;
+}

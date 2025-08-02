@@ -1,0 +1,15 @@
+<template>
+    <template if:true={showMap}>
+        <lightning-map 
+            markers-title="플래그십 목록"
+            list-view="visible"
+            map-markers={mapMarkers}
+            zoom-level="12"
+            selected-marker-value={selectedStoreId}
+            onmarkerselect={handleMarkerSelect}>
+        </lightning-map>
+    </template>
+    <template if:true={error}>
+        <p class="slds-text-color_error">지점을 불러오는데 문제가 발생했습니다.</p>
+    </template>
+</template>

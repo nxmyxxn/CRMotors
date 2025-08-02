@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SkillsetperTechnician__c</fullName>
+    <label>기술역량</label>
+    <referenceTo>Skillset__c</referenceTo>
+    <relationshipLabel>정비사 기술 역량</relationshipLabel>
+    <relationshipName>SkillsetperTechniciandedO</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

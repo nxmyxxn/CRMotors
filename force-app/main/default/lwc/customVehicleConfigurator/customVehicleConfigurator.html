@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="차량 구성">
+        <div class="slds-p-around_medium">
+            <lightning-combobox name="Pricebook" label="Pricebook" value={selectedPricebook} options={pricebookOptions} onchange={handleChange}></lightning-combobox>
+            <lightning-combobox name="ProductName" label="차종" value={selectedProductName} options={productNameOptions} onchange={handleChange}></lightning-combobox>
+            <lightning-combobox name="Trim" label="트림" value={selectedTrim} options={trimOptions} onchange={handleChange}></lightning-combobox>
+            <lightning-combobox name="Color" label="컬러" value={selectedColor} options={colorOptions} onchange={handleChange}></lightning-combobox>
+            <lightning-combobox name="Option" label="옵션" value={selectedOption} options={optionOptions} onchange={handleChange}></lightning-combobox>
+
+            <lightning-button label="검색" onclick={handleSearch} class="slds-m-top_medium"></lightning-button>
+
+            <template if:true={matchingProduct}>
+                <p class="slds-m-top_medium">검색된 제품 코드: {matchingProduct.ProductCode}</p>
+                <lightning-button label="Opportunity에 추가" onclick={handleAdd} class="slds-m-top_small"></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

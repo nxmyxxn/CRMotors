@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="서비스 자산 조회">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                label="서비스 제목 검색" 
+                value={searchKey} 
+                onchange={handleSearchKeyChange}
+                placeholder="제목 일부 입력..." >
+            </lightning-input>
+
+            <lightning-button 
+                label="검색" 
+                onclick={handleSearch} 
+                class="slds-m-top_small">
+            </lightning-button>
+        </div>
+
+        <template if:true={assetInfo}>
+            <lightning-datatable
+                key-field="id"
+                data={tableData}
+                columns={columns}
+                hide-checkbox-column="true"
+                class="slds-m-around_medium">
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>

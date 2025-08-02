@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AvailableModles__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>시승 가능 모델</label>
+    <referenceTo>VehicleModel__c</referenceTo>
+    <relationshipLabel>플래그십 스토어</relationshipLabel>
+    <relationshipName>FlagshipStore</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>
