@@ -23,16 +23,16 @@ By leveraging Salesforce’s standard architecture with thoughtful customization
 #### 🔹Submitting a Test Drive Request via Experience Cloud
 <img width="1174" height="535" alt="image" src="https://github.com/user-attachments/assets/c0b7146e-dc66-4290-ad24-fbc4cc303a69" />  
 
-#### 🔹Lead is created when customer submittes a Test Drive Request.<br> 🔹Lead screen displays both web- submitted quotes and test drive request records.
+#### 🔹Lead is created when customer submittes a Test Drive Request.<br> 🔹Lead screen displays both web-submitted quotes and test drive request records.
 <img width="1216" height="588" alt="image" src="https://github.com/user-attachments/assets/bd9ce8f1-acaf-45f3-b4a6-e1b63b443a8e" />  
 
-#### 🔹The Opportunity's Quote tab displays both web- submitted quotes and test drive request records.
+#### 🔹The Opportunity's Quote tab displays both web-submitted quotes and test drive request records.
 <img width="1213" height="585" alt="image" src="https://github.com/user-attachments/assets/9d5acd47-1819-4cf8-b43c-84c13877b673" />  
 
 #### 🔹Sales reps can easilty create new quotes directly from the Opportunity screen.
 <img width="1212" height="580" alt="image" src="https://github.com/user-attachments/assets/f5bc9fbd-704d-49f9-a251-cf9f6b48b31b" />  
   
-#### ➡️ This allows them to conveniently compare quotes submitted onine with those generated during in-person consultations-all in one place.
+#### ➡️ This allows them to conveniently compare quotes submitted online with those generated during in-person consultations all in one place.
 
 
 
