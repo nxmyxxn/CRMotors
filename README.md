@@ -39,5 +39,6 @@ By leveraging Salesforce’s standard architecture with thoughtful customization
 
 
 ### Data Modeling
+<img width="907" height="442" alt="image" src="https://github.com/user-attachments/assets/e29eb040-0e5c-486d-bce9-3ac6c641541a" />
 
 
