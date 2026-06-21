@@ -29,7 +29,7 @@ By leveraging Salesforce’s standard architecture with thoughtful customization
 #### 🔹The Opportunity's Quote tab displays both web-submitted quotes and test drive request records.
 <img width="1213" height="585" alt="image" src="https://github.com/user-attachments/assets/9d5acd47-1819-4cf8-b43c-84c13877b673" />  
 
-#### 🔹Sales reps can easilty create new quotes directly from the Opportunity screen.
+#### 🔹Sales reps can easily create new quotes directly from the Opportunity screen.
 <img width="1212" height="580" alt="image" src="https://github.com/user-attachments/assets/f5bc9fbd-704d-49f9-a251-cf9f6b48b31b" />  
   
 #### ➡️ This allows them to conveniently compare quotes submitted online with those generated during in-person consultations all in one place.
